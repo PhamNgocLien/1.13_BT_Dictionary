@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dictionary</title>
+</head>
+<body>
+<form>
+    <h3>Please input text</h3>
+    <input type="text" id="inputText">
+    <button type="button" onclick="search()">Search</button>
+    <p id="result"></p>
+</form>
+<script>
+    let eng = ["cat", "dog", "book", "clock", "car"];
+    let vni = ["mèo", "chó", "sách", "đồng hồ", "ô tô"];
+    let text = document.getElementById("inputText");
+    let result = [];
+
+    function search() {
+        if (eng.indexOf(text.value) !== -1) {
+            result.push(vni[eng.indexOf(text.value)]);
+            document.getElementById("result").innerText = result.toString();
+        } else {
+            document.getElementById("result").innerText = "Please input other text";
+        }
+    }
+</script>
+</body>
+</html>
